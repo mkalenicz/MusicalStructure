@@ -13,22 +13,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Set the action bar elevation to 0dp
-        getSupportActionBar().setElevation(0);
 
         ArrayList<SongDetail> songDetails = new ArrayList<>();
         songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        songDetails.add(new SongDetail("American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
+        songDetails.add(new SongDetail("Square One", "Coldplay", "X & Y", R.drawable.xycover));
+        songDetails.add(new SongDetail("Smells Like Teen Spirit", "Nirvana", "Nevermind", R.drawable.nirvana));
+        songDetails.add(new SongDetail("The Alphabeat", "David Guetta", "Nothing But The Beat", R.drawable.davidguetta));
+        songDetails.add(new SongDetail("Don't Phunk With My Heart", "The Black Eyed Peas", "Monkey Business", R.drawable.blackeyedpeas));
+        songDetails.add(new SongDetail("Let It Roll", "Flo Rida", "Wild Ones", R.drawable.florida));
+        songDetails.add(new SongDetail("Uprising", "Muse", "The Resistance", R.drawable.muse));
+        songDetails.add(new SongDetail("Dani California", "Red Hot Chili Peppers", "Stadium Arcadium", R.drawable.redhot));
 
 
 
