@@ -18,19 +18,19 @@ public class SongDetail {
         this.mAlbumImage = mAlbumImage;
     }
 
-    public String getmSongName() {
+    public String getSongName() {
         return mSongName;
     }
 
-    public String getmArtistName() {
+    public String getArtistName() {
         return mArtistName;
     }
 
-    public String getmAlbumName() {
+    public String getAlbumName() {
         return mAlbumName;
     }
 
-    public int getmAlbumImage() {
+    public int getAlbumImage() {
         return mAlbumImage;
     }
 }

@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.kalenicz.maciej.musicalstructure.AlbumDetailsActivity">
-
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        tools:src="@drawable/greenday"
+        android:id="@+id/album_detail_image"/>
+    <TextView
+        android:id="@+id/album_detail_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Artist"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Album"
+        android:id="@+id/album_detail_album"/>
+</LinearLayout>

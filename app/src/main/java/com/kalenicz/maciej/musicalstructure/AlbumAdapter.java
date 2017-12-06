@@ -33,13 +33,13 @@ public class AlbumAdapter extends ArrayAdapter<SongDetail> {
         SongDetail currentSong = getItem(position);
 
         ImageView albumImage = gridItemView.findViewById(R.id.album_grid_image);
-       albumImage.setImageResource(currentSong.getmAlbumImage());
+        albumImage.setImageResource(currentSong.getAlbumImage());
 
         TextView albumName = gridItemView.findViewById(R.id.album_grid_name);
-        albumName.setText(currentSong.getmAlbumName().toString());
+        albumName.setText(currentSong.getAlbumName().toString());
 
         TextView artistName = gridItemView.findViewById(R.id.album_grid_artist);
-        artistName.setText(currentSong.getmArtistName().toString());
+        artistName.setText(currentSong.getArtistName().toString());
 
         return gridItemView;
 
