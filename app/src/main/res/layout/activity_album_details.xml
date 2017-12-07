@@ -7,18 +7,37 @@
     android:orientation="vertical"
     tools:context="com.kalenicz.maciej.musicalstructure.AlbumDetailsActivity">
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         tools:src="@drawable/greenday"
         android:id="@+id/album_detail_image"/>
-    <TextView
-        android:id="@+id/album_detail_artist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Artist"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Album"
-        android:id="@+id/album_detail_album"/>
+        android:id="@+id/album_detail_album"
+        android:layout_gravity="center"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/primaryDarkTextColor"/>
+
+    <TextView
+        android:id="@+id/album_detail_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Artist"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textStyle="italic"/>
+
+    <ListView
+        android:id="@+id/album_detail_songs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+
 </LinearLayout>
