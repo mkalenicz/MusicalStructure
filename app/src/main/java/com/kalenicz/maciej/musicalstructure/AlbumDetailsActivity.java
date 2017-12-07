@@ -13,6 +13,11 @@ import java.util.ArrayList;
 
 public class AlbumDetailsActivity extends AppCompatActivity {
     private ArrayList<AlbumDetail> albumDetails;
+
+    public ArrayList<AlbumDetail> getAlbumDetails() {
+        return albumDetails;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +26,7 @@ public class AlbumDetailsActivity extends AppCompatActivity {
         albumDetails = new ArrayList<>();
         albumDetails.add(new AlbumDetail("1. American Idiot","Green Day","American Idiot"));
         albumDetails.add(new AlbumDetail("2. Jesus of Suburbia","Green Day","American Idiot"));
+
 
         ListView listView = findViewById(R.id.album_detail_songs);
         AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumDetails);
