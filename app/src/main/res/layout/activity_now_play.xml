@@ -1,28 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.kalenicz.maciej.musicalstructure.NowPlayActivity">
 
     <ImageView
         android:id="@+id/now_play_image_album"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        tools:src="@drawable/greenday"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        tools:src="@drawable/greenday" />
+
     <TextView
         android:id="@+id/now_play_song_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="American Idiot"
-        android:textStyle="bold"/>
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/primaryDarkTextColor"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        tools:text="American Idiot" />
 
     <TextView
         android:id="@+id/now_play_artist_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Green Day"
-        android:text="Green Day"/>
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Green Day"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        tools:text="Green Day" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:minHeight="90dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/reverse_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_skip_previous_black_24dp" />
+
+        <ImageView
+            android:id="@+id/play_pause_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:src="@drawable/ic_play_circle_outline_black_24dp" />
+
+
+        <ImageView
+            android:id="@+id/next_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_skip_next_black_24dp" />
+    </LinearLayout>
 
 </LinearLayout>
