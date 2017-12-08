@@ -3,8 +3,6 @@ package com.kalenicz.maciej.musicalstructure;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,6 +11,7 @@ import java.util.ArrayList;
 
 public class AlbumDetailsActivity extends AppCompatActivity {
     private ArrayList<AlbumDetail> albumAmericanIdiot;
+    private ArrayList<AlbumDetail> albumXandY;
     
 
     @Override
@@ -30,7 +29,15 @@ public class AlbumDetailsActivity extends AppCompatActivity {
         albumAmericanIdiot.add(new AlbumDetail("7. Wake Me Up When September Ends","Green Day","American Idiot"));
         albumAmericanIdiot.add(new AlbumDetail("8. Homecoming","Green Day","American Idiot"));
 
-
+        albumXandY = new ArrayList<>();
+        albumXandY.add(new AlbumDetail("1. Square One","Coldplay","X & Y"));
+        albumXandY.add(new AlbumDetail("2. Twisted Logic","Coldplay","X & Y"));
+        albumXandY.add(new AlbumDetail("3. Shallowed in the Sea","Coldplay","X & Y"));
+        albumXandY.add(new AlbumDetail("4. The Hardest Part","Coldplay","X & Y"));
+        albumXandY.add(new AlbumDetail("5. Low","Coldplay","X & Y"));
+        albumXandY.add(new AlbumDetail("6. A Message","Coldplay","X & Y"));
+        albumXandY.add(new AlbumDetail("7. Speed of Sound","Coldplay","X & Y"));
+        albumXandY.add(new AlbumDetail("8. X & Y","Coldplay","X & Y"));
 
         Intent intent = getIntent();
         String albumName = intent.getStringExtra("album_name");
@@ -42,6 +49,11 @@ public class AlbumDetailsActivity extends AppCompatActivity {
 
         if(albumName.equals("American Idiot")){
             AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumAmericanIdiot);
+            listView.setAdapter(albumDetailsAdapter);
+        }
+
+        if(albumName.equals("X & Y")){
+            AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumXandY);
             listView.setAdapter(albumDetailsAdapter);
         }
 
