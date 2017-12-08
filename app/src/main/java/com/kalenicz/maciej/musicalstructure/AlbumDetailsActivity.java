@@ -16,6 +16,7 @@ public class AlbumDetailsActivity extends AppCompatActivity {
     private ArrayList<AlbumDetail> albumXandY;
     private ArrayList<AlbumDetail> albumNevermind;
     private ArrayList<AlbumDetail> albumNothingButTheBeat;
+    private ArrayList<AlbumDetail> albumMonkeyBusiness;
 
 
     @Override
@@ -63,6 +64,17 @@ public class AlbumDetailsActivity extends AppCompatActivity {
         albumNothingButTheBeat.add(new AlbumDetail("7. I Can Only Imagine", "David Guetta", "Nothing But The Beat",R.drawable.davidguetta));
         albumNothingButTheBeat.add(new AlbumDetail("8. Crank It Up", "David Guetta", "Nothing But The Beat",R.drawable.davidguetta));
 
+        albumMonkeyBusiness = new ArrayList<>();
+        albumMonkeyBusiness.add(new AlbumDetail("1. Pump It", "The Black Eyed Peas", "Monkey Business", R.drawable.blackeyedpeas));
+        albumMonkeyBusiness.add(new AlbumDetail("2. Don't Phunk with My Heart", "The Black Eyed Peas", "Monkey Business", R.drawable.blackeyedpeas));
+        albumMonkeyBusiness.add(new AlbumDetail("3. My Style", "The Black Eyed Peas", "Monkey Business", R.drawable.blackeyedpeas));
+        albumMonkeyBusiness.add(new AlbumDetail("4. Don't Lie", "The Black Eyed Peas", "Monkey Business", R.drawable.blackeyedpeas));
+        albumMonkeyBusiness.add(new AlbumDetail("5. My Humps", "The Black Eyed Peas", "Monkey Business", R.drawable.blackeyedpeas));
+        albumMonkeyBusiness.add(new AlbumDetail("6. Like That", "The Black Eyed Peas", "Monkey Business", R.drawable.blackeyedpeas));
+        albumMonkeyBusiness.add(new AlbumDetail("7. Dum Diddly", "The Black Eyed Peas", "Monkey Business", R.drawable.blackeyedpeas));
+        albumMonkeyBusiness.add(new AlbumDetail("8. Feel It", "The Black Eyed Peas", "Monkey Business", R.drawable.blackeyedpeas));
+
+
         Intent intent = getIntent();
         String albumName = intent.getStringExtra("album_name");
         String artistName = intent.getStringExtra("artist_name");
@@ -70,35 +82,51 @@ public class AlbumDetailsActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.album_detail_songs);
 
+        switch (albumName){
+            case "American Idiot":
+                AlbumDetailsAdapter americanIdiotAdapter = new AlbumDetailsAdapter(this, albumAmericanIdiot);
+                listView.setAdapter(americanIdiotAdapter);
+                showNowPlaySong(listView, albumAmericanIdiot);
+                break;
 
-        if (albumName.equals("American Idiot")) {
-            final ArrayList<AlbumDetail> currentAlbum = albumAmericanIdiot;
-            AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumAmericanIdiot);
-            listView.setAdapter(albumDetailsAdapter);
-            showNowPlaySong(listView, currentAlbum);
+            case "X & Y":
+            AlbumDetailsAdapter albumXandYAdapter = new AlbumDetailsAdapter(this, albumXandY);
+            listView.setAdapter(albumXandYAdapter);
+            showNowPlaySong(listView, albumXandY);
+            default:
+                System.out.println("No match color");
+                break;
+
         }
 
-        if (albumName.equals("X & Y")) {
-            final ArrayList<AlbumDetail> currentAlbum = albumXandY;
-            AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumXandY);
-            listView.setAdapter(albumDetailsAdapter);
-            showNowPlaySong(listView, currentAlbum);
-
-        }
-
-        if (albumName.equals("Nevermind")) {
-            final ArrayList<AlbumDetail> currentAlbum = albumNevermind;
-            AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumNevermind);
-            listView.setAdapter(albumDetailsAdapter);
-            showNowPlaySong(listView, currentAlbum);
-        }
-
-        if (albumName.equals("Nothing But The Beat")) {
-            final ArrayList<AlbumDetail> currentAlbum = albumNothingButTheBeat;
-            AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumNothingButTheBeat);
-            listView.setAdapter(albumDetailsAdapter);
-            showNowPlaySong(listView, currentAlbum);
-        }
+//        if (albumName.equals("American Idiot")) {
+//            final ArrayList<AlbumDetail> currentAlbum = albumAmericanIdiot;
+//            AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumAmericanIdiot);
+//            listView.setAdapter(albumDetailsAdapter);
+//            showNowPlaySong(listView, currentAlbum);
+//        }
+//
+//        if (albumName.equals("X & Y")) {
+//            final ArrayList<AlbumDetail> currentAlbum = albumXandY;
+//            AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumXandY);
+//            listView.setAdapter(albumDetailsAdapter);
+//            showNowPlaySong(listView, currentAlbum);
+//
+//        }
+//
+//        if (albumName.equals("Nevermind")) {
+//            final ArrayList<AlbumDetail> currentAlbum = albumNevermind;
+//            AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumNevermind);
+//            listView.setAdapter(albumDetailsAdapter);
+//            showNowPlaySong(listView, currentAlbum);
+//        }
+//
+//        if (albumName.equals("Nothing But The Beat")) {
+//            final ArrayList<AlbumDetail> currentAlbum = albumNothingButTheBeat;
+//            AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumNothingButTheBeat);
+//            listView.setAdapter(albumDetailsAdapter);
+//            showNowPlaySong(listView, currentAlbum);
+//        }
 
         ImageView albumImageImageView = findViewById(R.id.album_detail_image);
         albumImageImageView.setImageResource(albumImage);
