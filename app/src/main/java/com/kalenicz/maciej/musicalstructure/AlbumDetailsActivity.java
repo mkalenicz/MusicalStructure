@@ -60,7 +60,8 @@ public class AlbumDetailsActivity extends AppCompatActivity {
                     AlbumDetail currentSong = albumAmericanIdiot.get(position);
 
                     Bundle bundle = new Bundle();
-                    bundle.putString("album_name", currentSong.getAlbumName());
+                    bundle.putString("song_name", currentSong.getSongName());
+//                    bundle.putString("album_name", currentSong.getAlbumName());
                     bundle.putString("artist_name", currentSong.getArtistName());
                     bundle.putInt("album_image", currentSong.getImageAlbumResource());
 

@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.kalenicz.maciej.musicalstructure.NowPlayActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/now_play_image_album"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        tools:src="@drawable/greenday"/>
+    <TextView
+        android:id="@+id/now_play_song_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="American Idiot"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/now_play_artist_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Green Day"
+        android:text="Green Day"/>
+
+</LinearLayout>
