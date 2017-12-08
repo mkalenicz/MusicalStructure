@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class AlbumDetailsActivity extends AppCompatActivity {
-    private ArrayList<AlbumDetail> albumAmericanIdiot;
+    public ArrayList<AlbumDetail> albumAmericanIdiot;
     private ArrayList<AlbumDetail> albumXandY;
     
 
@@ -61,7 +61,6 @@ public class AlbumDetailsActivity extends AppCompatActivity {
 
                     Bundle bundle = new Bundle();
                     bundle.putString("song_name", currentSong.getSongName());
-//                    bundle.putString("album_name", currentSong.getAlbumName());
                     bundle.putString("artist_name", currentSong.getArtistName());
                     bundle.putInt("album_image", currentSong.getImageAlbumResource());
 
