@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent intent = new Intent(MainActivity.this, AlbumDetailsAdapter.class);
+//                Intent intent = new Intent(MainActivity.this, AlbumDetailsAdapter.class);
 
                 Intent albumDetailsIntent = new Intent(MainActivity.this, AlbumDetailsActivity.class);
                 SongDetail currentSong = songDetails.get(position);
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putInt("album_image", currentSong.getAlbumImage());
 
                 albumDetailsIntent.putExtras(bundle);
-                intent.putExtras(bundle);
+                albumDetailsIntent.putExtras(bundle);
                 startActivity(albumDetailsIntent);
             }
         });
