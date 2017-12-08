@@ -12,30 +12,38 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class AlbumDetailsActivity extends AppCompatActivity {
-    private ArrayList<AlbumDetail> albumDetails;
-
-    public ArrayList<AlbumDetail> getAlbumDetails() {
-        return albumDetails;
-    }
+    private ArrayList<AlbumDetail> albumAmericanIdiot;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_details);
 
-        albumDetails = new ArrayList<>();
-        albumDetails.add(new AlbumDetail("1. American Idiot","Green Day","American Idiot"));
-        albumDetails.add(new AlbumDetail("2. Jesus of Suburbia","Green Day","American Idiot"));
+        albumAmericanIdiot = new ArrayList<>();
+        albumAmericanIdiot.add(new AlbumDetail("1. American Idiot","Green Day","American Idiot"));
+        albumAmericanIdiot.add(new AlbumDetail("2. Jesus of Suburbia","Green Day","American Idiot"));
+        albumAmericanIdiot.add(new AlbumDetail("3. Holiday","Green Day","American Idiot"));
+        albumAmericanIdiot.add(new AlbumDetail("4. Are We The Waiting","Green Day","American Idiot"));
+        albumAmericanIdiot.add(new AlbumDetail("5. Give Me Novocaine","Green Day","American Idiot"));
+        albumAmericanIdiot.add(new AlbumDetail("6. Extraordinary Girl","Green Day","American Idiot"));
+        albumAmericanIdiot.add(new AlbumDetail("7. Wake Me Up When September Ends","Green Day","American Idiot"));
+        albumAmericanIdiot.add(new AlbumDetail("8. Homecoming","Green Day","American Idiot"));
 
 
-        ListView listView = findViewById(R.id.album_detail_songs);
-        AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumDetails);
-        listView.setAdapter(albumDetailsAdapter);
 
         Intent intent = getIntent();
         String albumName = intent.getStringExtra("album_name");
         String artistName = intent.getStringExtra("artist_name");
         int albumImage = intent.getIntExtra("album_image", R.drawable.nirvana);
+
+        ListView listView = findViewById(R.id.album_detail_songs);
+
+
+        if(albumName.equals("American Idiot")){
+            AlbumDetailsAdapter albumDetailsAdapter = new AlbumDetailsAdapter(this, albumAmericanIdiot);
+            listView.setAdapter(albumDetailsAdapter);
+        }
 
         ImageView albumImageImageView = findViewById(R.id.album_detail_image);
         albumImageImageView.setImageResource(albumImage);
