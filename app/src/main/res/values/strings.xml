@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Musical Structure</string>
+    <string name="album_details">About album</string>
+    <string name="now_play">Play music</string>
 </resources>
