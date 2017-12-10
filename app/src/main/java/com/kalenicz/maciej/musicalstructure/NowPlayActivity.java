@@ -33,7 +33,6 @@ public class NowPlayActivity extends AppCompatActivity {
         artistNameTextView.setText(artistName);
 
         ImageView playbutton = findViewById(R.id.play_pause_button);
-
         playbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

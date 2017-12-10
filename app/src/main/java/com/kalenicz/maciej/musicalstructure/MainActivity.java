@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         songDetails = new ArrayList<>();
         songDetails.add(new SongDetail("Green Day", "American Idiot", R.drawable.greenday));
         songDetails.add(new SongDetail("Coldplay", "X & Y", R.drawable.xycover));
