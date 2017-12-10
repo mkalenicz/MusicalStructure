@@ -36,16 +36,16 @@ public class NowPlayActivity extends AppCompatActivity {
         playbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                isPlaying = !isPlaying;
                 if (isPlaying){
                     ImageView pausebutton = findViewById(R.id.play_pause_button);
-                    pausebutton.setImageResource(R.drawable.icons8pause);
+                    pausebutton.setImageResource(R.drawable.ic_pause_circle_outline_black_24dp);
                     Toast toast = Toast.makeText(getApplicationContext(), "Now you are listening song: " + songName, Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
                     ImageView playbutton = findViewById(R.id.play_pause_button);
-                    playbutton.setImageResource(R.drawable.icons8play);
+                    playbutton.setImageResource(R.drawable.ic_play_circle_outline_black_24dp);
                 }
-                isPlaying = !isPlaying;
             }
         });
 
