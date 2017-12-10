@@ -15,10 +15,10 @@ import java.util.ArrayList;
  * Created by maciej on 07.12.2017.
  */
 
-public class AlbumDetailsAdapter extends ArrayAdapter<AlbumDetail> {
+public class AlbumDetailsAdapter extends ArrayAdapter<AlbumDetails> {
 
-    public AlbumDetailsAdapter(@NonNull Context context, ArrayList<AlbumDetail> albumDetailArrayList) {
-        super(context, 0, albumDetailArrayList);
+    public AlbumDetailsAdapter(@NonNull Context context, ArrayList<AlbumDetails> albumDetailsArrayList) {
+        super(context, 0, albumDetailsArrayList);
     }
 
     @NonNull
@@ -28,7 +28,7 @@ public class AlbumDetailsAdapter extends ArrayAdapter<AlbumDetail> {
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.album_song_list_item, parent, false);
         }
-        AlbumDetail currentAlbum = getItem(position);
+        AlbumDetails currentAlbum = getItem(position);
 
         TextView songAlbum = listItemView.findViewById(R.id.song_item_list);
         songAlbum.setText(currentAlbum.getSongName().toString());

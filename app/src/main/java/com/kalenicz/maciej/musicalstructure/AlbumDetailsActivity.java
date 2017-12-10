@@ -18,14 +18,14 @@ public class AlbumDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_details);
 
-        ArrayList<AlbumDetail> albumAmericanIdiot = SongsList.getAmericanIdiot();
-        ArrayList<AlbumDetail> albumXandY = SongsList.getAlbumXandY();
-        ArrayList<AlbumDetail> albumNevermind = SongsList.getAlbumNevermind();
-        ArrayList<AlbumDetail> albumNothingButTheBeat = SongsList.getAlbumNothingButTheBeat();
-        ArrayList<AlbumDetail> albumMonkeyBusiness = SongsList.getAlbumMonkeyBusiness();
-        ArrayList<AlbumDetail> albumWildOnes = SongsList.getAlbumWildOnes();
-        ArrayList<AlbumDetail> albumTheResistance = SongsList.getAlbumTheResistance();
-        ArrayList<AlbumDetail> albumStadiumArcadium = SongsList.getAlbumStadiumArcadium();
+        ArrayList<AlbumDetails> albumAmericanIdiot = SongsList.getAmericanIdiot();
+        ArrayList<AlbumDetails> albumXandY = SongsList.getAlbumXandY();
+        ArrayList<AlbumDetails> albumNevermind = SongsList.getAlbumNevermind();
+        ArrayList<AlbumDetails> albumNothingButTheBeat = SongsList.getAlbumNothingButTheBeat();
+        ArrayList<AlbumDetails> albumMonkeyBusiness = SongsList.getAlbumMonkeyBusiness();
+        ArrayList<AlbumDetails> albumWildOnes = SongsList.getAlbumWildOnes();
+        ArrayList<AlbumDetails> albumTheResistance = SongsList.getAlbumTheResistance();
+        ArrayList<AlbumDetails> albumStadiumArcadium = SongsList.getAlbumStadiumArcadium();
 
         Intent intent = getIntent();
         String albumName = intent.getStringExtra("album_name");
@@ -95,13 +95,13 @@ public class AlbumDetailsActivity extends AppCompatActivity {
         artistNameTextView.setText(artistName);
     }
 
-    private void showNowPlaySong(ListView listView, final ArrayList<AlbumDetail> currentAlbum) {
+    private void showNowPlaySong(ListView listView, final ArrayList<AlbumDetails> currentAlbum) {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Intent intent = new Intent(AlbumDetailsActivity.this, NowPlayActivity.class);
 
-                AlbumDetail currentSong = currentAlbum.get(position);
+                AlbumDetails currentSong = currentAlbum.get(position);
 
                 Bundle bundle = new Bundle();
                 bundle.putString("song_name", currentSong.getSongName());

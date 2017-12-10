@@ -16,9 +16,9 @@ import java.util.ArrayList;
  * Created by maciej on 06.12.2017.
  */
 
-public class AlbumAdapter extends ArrayAdapter<SongDetail> {
+public class AlbumAdapter extends ArrayAdapter<AlbumDetails> {
 
-    public AlbumAdapter(Context context, ArrayList<SongDetail> albumList) {
+    public AlbumAdapter(Context context, ArrayList<AlbumDetails> albumList) {
         super(context, 0, albumList);
     }
 
@@ -30,10 +30,10 @@ public class AlbumAdapter extends ArrayAdapter<SongDetail> {
         if (gridItemView == null) {
             gridItemView = LayoutInflater.from(getContext()).inflate(R.layout.album_grid_item, parent, false);
         }
-        SongDetail currentSong = getItem(position);
+        AlbumDetails currentSong = getItem(position);
 
         ImageView albumImage = gridItemView.findViewById(R.id.album_grid_image);
-        albumImage.setImageResource(currentSong.getAlbumImage());
+        albumImage.setImageResource(currentSong.getImageAlbumResource());
 
         TextView albumName = gridItemView.findViewById(R.id.album_grid_name);
         albumName.setText(currentSong.getAlbumName().toString());
