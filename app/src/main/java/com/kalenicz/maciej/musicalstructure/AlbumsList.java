@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class AlbumsList {
     public static ArrayList<AlbumDetails> getSongDetails() {
-    ArrayList<AlbumDetails> albumDetails;
-    albumDetails = new ArrayList<>();
+        ArrayList<AlbumDetails> albumDetails;
+        albumDetails = new ArrayList<>();
         albumDetails.add(new AlbumDetails("Green Day", "American Idiot", R.drawable.greenday));
         albumDetails.add(new AlbumDetails("Coldplay", "X & Y", R.drawable.xycover));
         albumDetails.add(new AlbumDetails("Nirvana", "Nevermind", R.drawable.nirvana));

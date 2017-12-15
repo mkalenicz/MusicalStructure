@@ -11,13 +11,6 @@ public class AlbumDetails {
     private int imageAlbumResource;
     private int songId;
 
-    public AlbumDetails(String songName, String artistName, String albumName, int imageAlbumResource) {
-        this.songName = songName;
-        this.ArtistName = artistName;
-        this.AlbumName = albumName;
-        this.imageAlbumResource = imageAlbumResource;
-    }
-
     public AlbumDetails(String artistName, String albumName, int imageAlbumResource) {
         this.ArtistName = artistName;
         this.AlbumName = albumName;
