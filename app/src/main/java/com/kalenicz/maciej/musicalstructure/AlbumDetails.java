@@ -9,6 +9,7 @@ public class AlbumDetails {
     private String ArtistName;
     private String AlbumName;
     private int imageAlbumResource;
+    private int songId;
 
     public AlbumDetails(String songName, String artistName, String albumName, int imageAlbumResource) {
         this.songName = songName;
@@ -18,6 +19,14 @@ public class AlbumDetails {
     }
 
     public AlbumDetails(String artistName, String albumName, int imageAlbumResource) {
+        this.ArtistName = artistName;
+        this.AlbumName = albumName;
+        this.imageAlbumResource = imageAlbumResource;
+    }
+
+    public AlbumDetails(int songId, String songName, String artistName, String albumName, int imageAlbumResource) {
+        this.songId = songId;
+        this.songName = songName;
         this.ArtistName = artistName;
         this.AlbumName = albumName;
         this.imageAlbumResource = imageAlbumResource;
@@ -37,6 +46,10 @@ public class AlbumDetails {
 
     public int getImageAlbumResource() {
         return imageAlbumResource;
+    }
+
+    public int getSongId() {
+        return songId;
     }
 }
 

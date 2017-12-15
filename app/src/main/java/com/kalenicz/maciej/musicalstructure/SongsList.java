@@ -12,14 +12,14 @@ public class SongsList {
     public static ArrayList<AlbumDetails> getAmericanIdiot() {
         ArrayList<AlbumDetails> albumAmericanIdiot;
         albumAmericanIdiot = new ArrayList<>();
-        albumAmericanIdiot.add(new AlbumDetails("1. American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
-        albumAmericanIdiot.add(new AlbumDetails("2. Jesus of Suburbia", "Green Day", "American Idiot", R.drawable.greenday));
-        albumAmericanIdiot.add(new AlbumDetails("3. Holiday", "Green Day", "American Idiot", R.drawable.greenday));
-        albumAmericanIdiot.add(new AlbumDetails("4. Are We The Waiting", "Green Day", "American Idiot", R.drawable.greenday));
-        albumAmericanIdiot.add(new AlbumDetails("5. Give Me Novocaine", "Green Day", "American Idiot", R.drawable.greenday));
-        albumAmericanIdiot.add(new AlbumDetails("6. Extraordinary Girl", "Green Day", "American Idiot", R.drawable.greenday));
-        albumAmericanIdiot.add(new AlbumDetails("7. Wake Me Up When September Ends", "Green Day", "American Idiot", R.drawable.greenday));
-        albumAmericanIdiot.add(new AlbumDetails("8. Homecoming", "Green Day", "American Idiot", R.drawable.greenday));
+        albumAmericanIdiot.add(new AlbumDetails(1,"1. American Idiot", "Green Day", "American Idiot", R.drawable.greenday));
+        albumAmericanIdiot.add(new AlbumDetails(2,"2. Jesus of Suburbia", "Green Day", "American Idiot", R.drawable.greenday));
+        albumAmericanIdiot.add(new AlbumDetails(3, "3. Holiday", "Green Day", "American Idiot", R.drawable.greenday));
+        albumAmericanIdiot.add(new AlbumDetails(4, "4. Are We The Waiting", "Green Day", "American Idiot", R.drawable.greenday));
+        albumAmericanIdiot.add(new AlbumDetails(5, "5. Give Me Novocaine", "Green Day", "American Idiot", R.drawable.greenday));
+        albumAmericanIdiot.add(new AlbumDetails(6, "6. Extraordinary Girl", "Green Day", "American Idiot", R.drawable.greenday));
+        albumAmericanIdiot.add(new AlbumDetails(7, "7. Wake Me Up When September Ends", "Green Day", "American Idiot", R.drawable.greenday));
+        albumAmericanIdiot.add(new AlbumDetails(8,"8. Homecoming", "Green Day", "American Idiot", R.drawable.greenday));
         return albumAmericanIdiot;
     }
 

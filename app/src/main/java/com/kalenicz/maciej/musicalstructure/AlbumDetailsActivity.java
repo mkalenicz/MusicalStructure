@@ -107,6 +107,7 @@ public class AlbumDetailsActivity extends AppCompatActivity {
                 bundle.putString("song_name", currentSong.getSongName());
                 bundle.putString("artist_name", currentSong.getArtistName());
                 bundle.putInt("album_image", currentSong.getImageAlbumResource());
+                bundle.putInt("song_id", currentSong.getSongId());
 
                 intent.putExtras(bundle);
                 intent.putExtras(bundle);

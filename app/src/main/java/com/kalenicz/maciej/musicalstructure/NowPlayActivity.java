@@ -3,11 +3,8 @@ package com.kalenicz.maciej.musicalstructure;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +12,10 @@ import java.util.ArrayList;
 
 public class NowPlayActivity extends AppCompatActivity {
     boolean isPlaying = false;
+
+    ArrayList<AlbumDetails> albumAmericanIdiot;
+    int currentIndex = 0;
+    int clickIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,10 @@ public class NowPlayActivity extends AppCompatActivity {
         final String songName = intent.getStringExtra("song_name");
         String artistName = intent.getStringExtra("artist_name");
         int albumImage = intent.getIntExtra("album_image", R.drawable.nirvana);
+        final int songId = intent.getIntExtra("song_id", 0);
 
+
+        albumAmericanIdiot = SongsList.getAmericanIdiot();
         ImageView albumImageImageView = findViewById(R.id.now_play_image_album);
         albumImageImageView.setImageResource(albumImage);
 
@@ -36,19 +40,28 @@ public class NowPlayActivity extends AppCompatActivity {
         TextView artistNameTextView = findViewById(R.id.now_play_artist_name);
         artistNameTextView.setText(artistName);
 
-        ImageView playbutton = findViewById(R.id.play_pause_button);
-        playbutton.setOnClickListener(new View.OnClickListener() {
+        ImageView playButton = findViewById(R.id.play_pause_button);
+        playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 isPlaying = !isPlaying;
-                if (isPlaying){
-                    ImageView pausebutton = findViewById(R.id.play_pause_button);
-                    pausebutton.setImageResource(R.drawable.ic_pause_circle_outline_black_24dp);
-                    Toast toast = Toast.makeText(getApplicationContext(), "Now you are listening song: " + songName, Toast.LENGTH_SHORT);
-                    toast.show();
+                if (isPlaying) {
+                    ImageView pauseButton = findViewById(R.id.play_pause_button);
+                    pauseButton.setImageResource(R.drawable.ic_pause_circle_outline_black_24dp);
+
+                    String currentSongName = albumAmericanIdiot.get(currentIndex).getSongName();
+
+                    if (clickIndex == 0) {
+                        Toast toast = Toast.makeText(getApplicationContext(), "Now you are listening song: " + songName, Toast.LENGTH_SHORT);
+                        toast.show();
+                    } else {
+                        Toast toast = Toast.makeText(getApplicationContext(), "Now you are listening song: " + currentSongName, Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
                 } else {
-                    ImageView playbutton = findViewById(R.id.play_pause_button);
-                    playbutton.setImageResource(R.drawable.ic_play_circle_outline_black_24dp);
+                    ImageView playButton = findViewById(R.id.play_pause_button);
+                    playButton.setImageResource(R.drawable.ic_play_circle_outline_black_24dp);
                 }
             }
         });
@@ -57,8 +70,17 @@ public class NowPlayActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Toast toast =  Toast.makeText(getApplicationContext(), "Next song", Toast.LENGTH_SHORT);
-                toast.show();
+                if (currentIndex == 0 && clickIndex == 0) {
+                    currentIndex = songId;
+                }else{
+                currentIndex++;
+                clickIndex++;}
+                if (!(currentIndex < albumAmericanIdiot.size())) {
+                    currentIndex = 0;
+                }
+                String songName = albumAmericanIdiot.get(currentIndex).getSongName();
+                TextView songNameTextView = findViewById(R.id.now_play_song_name);
+                songNameTextView.setText(songName);
             }
         });
 
@@ -66,8 +88,20 @@ public class NowPlayActivity extends AppCompatActivity {
         reverseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast toast =  Toast.makeText(getApplicationContext(), "Previous song", Toast.LENGTH_SHORT);
-                toast.show();
+                if (clickIndex ==0){
+                    currentIndex = songId - 1;
+                    currentIndex=currentIndex -1;
+                    clickIndex ++;
+                } else {
+                    currentIndex=currentIndex -1;
+                    clickIndex ++;
+                }
+                if (currentIndex < 0) {
+                    currentIndex = 0;
+                }
+                    String songName = albumAmericanIdiot.get(currentIndex).getSongName();
+                    TextView songNameTextView = findViewById(R.id.now_play_song_name);
+                    songNameTextView.setText(songName);
             }
         });
     }
