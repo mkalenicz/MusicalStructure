@@ -3,6 +3,7 @@ package com.kalenicz.maciej.musicalstructure;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -17,6 +18,9 @@ public class AlbumDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_details);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         ArrayList<AlbumDetails> albumAmericanIdiot = SongsList.getAmericanIdiot();
         ArrayList<AlbumDetails> albumXandY = SongsList.getAlbumXandY();
@@ -93,6 +97,15 @@ public class AlbumDetailsActivity extends AppCompatActivity {
 
         TextView artistNameTextView = findViewById(R.id.album_detail_artist);
         artistNameTextView.setText(artistName);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home){
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void showNowPlaySong(ListView listView, final ArrayList<AlbumDetails> currentAlbum) {
