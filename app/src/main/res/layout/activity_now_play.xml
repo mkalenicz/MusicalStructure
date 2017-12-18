@@ -14,27 +14,59 @@
         android:layout_marginTop="32dp"
         tools:src="@drawable/greenday" />
 
-    <TextView
-        android:id="@+id/now_play_song_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="@color/primaryDarkTextColor"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        tools:text="American Idiot" />
 
-    <TextView
-        android:id="@+id/now_play_artist_name"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Green Day"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        tools:text="Green Day" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/now_play_song_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/primaryDarkTextColor"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            tools:text="American Idiot" />
+
+        <TextView
+            android:id="@+id/now_play_artist_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Green Day"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:text="Green Day" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/go_home_now_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:src="@drawable/home" />
+
+            <ImageView
+                android:id="@+id/go_album_now_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:src="@drawable/music_albums" />
+
+        </LinearLayout>
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="wrap_content"

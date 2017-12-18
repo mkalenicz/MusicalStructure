@@ -20,9 +20,6 @@ public class NowPlayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
         ArrayList<AlbumDetails> albumAmericanIdiot = SongsList.getAmericanIdiot();
         ArrayList<AlbumDetails> albumXandY = SongsList.getAlbumXandY();
         ArrayList<AlbumDetails> albumNevermind = SongsList.getAlbumNevermind();
@@ -35,12 +32,35 @@ public class NowPlayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_play);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         final String songName = intent.getStringExtra("song_name");
-        String albumName = intent.getStringExtra("album_name");
-        String artistName = intent.getStringExtra("artist_name");
-        int albumImage = intent.getIntExtra("album_image", R.drawable.nirvana);
+        final String albumName = intent.getStringExtra("album_name");
+        final String artistName = intent.getStringExtra("artist_name");
+        final int albumImage = intent.getIntExtra("album_image", R.drawable.nirvana);
         final int songId = intent.getIntExtra("song_id", 0);
+
+        ImageView homeImageView = findViewById(R.id.go_home_now_play);
+        homeImageView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent goHomeIntent = new Intent(NowPlayActivity.this, MainActivity.class);
+                startActivity(goHomeIntent);
+            }
+        });
+
+        ImageView albumImageView = findViewById(R.id.go_album_now_play);
+        albumImageView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent goAlbumIntent = new Intent(NowPlayActivity.this, AlbumDetailsActivity.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("album_name", albumName);
+                bundle.putString("artist_name", artistName);
+                bundle.putInt("album_image", albumImage);
+                goAlbumIntent.putExtras(bundle);
+                startActivity(goAlbumIntent);
+            }
+        });
 
         switch (albumName) {
             case "American Idiot":
@@ -144,13 +164,12 @@ public class NowPlayActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == android.R.id.home){
+        if (id == android.R.id.home) {
             this.finish();
         }
         return super.onOptionsItemSelected(item);

@@ -19,8 +19,13 @@ public class AlbumDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_details);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        ImageView homeImageView = findViewById(R.id.go_home_button);
+        homeImageView.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent goHomeIntent = new Intent(AlbumDetailsActivity.this, MainActivity.class);
+                startActivity(goHomeIntent);
+            }
+        });
 
         ArrayList<AlbumDetails> albumAmericanIdiot = SongsList.getAmericanIdiot();
         ArrayList<AlbumDetails> albumXandY = SongsList.getAlbumXandY();
@@ -102,7 +107,7 @@ public class AlbumDetailsActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == android.R.id.home){
+        if (id == android.R.id.home) {
             this.finish();
         }
         return super.onOptionsItemSelected(item);
